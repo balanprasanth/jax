@@ -11,7 +11,7 @@ module.exports = async ({ github, context }) => {
     let assigneesList;
     // Is this an issue? If so, assign the issue number. Otherwise, assign the PR number.
     if (context.payload.issue) {
-      //assignee List for issues. username must be a Github. 
+      //assignee List for issues.
       assigneesList = ["balanprasanth"];
       issueNumber = context.payload.issue.number;
     } else {
@@ -40,4 +40,4 @@ module.exports = async ({ github, context }) => {
       repo: context.repo.repo,
       assignees: [assigneeForIssue],
     });
-  };
+};
