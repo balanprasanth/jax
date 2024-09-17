@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
     def test
-        p "test"
+        p "testerwerwe"
     end
 end
