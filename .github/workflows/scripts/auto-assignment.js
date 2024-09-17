@@ -15,7 +15,7 @@ module.exports = async ({ github, context }) => {
       assigneesList = ["balanp"];
       issueNumber = context.payload.issue.number;
     } else {
-      console.log("Check it's a PR:" context.payload)
+      console.log("Check it's a PR:", context.payload)
       //assignee List for PRs. 
       assigneesList = ["balanp"];
       issueNumber = context.payload.number;
