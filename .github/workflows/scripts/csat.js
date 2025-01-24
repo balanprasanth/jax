@@ -46,7 +46,7 @@ module.exports = async ({ github, context }) => {
    
             const noCsat = `<a target='_blank' href="${baseUrl + CONSTANT_VALUES.MODULE.CSAT.SATISFACTION_PARAM +
                               CONSTANT_VALUES.MODULE.CSAT.NO +
-                              CONSTANT_VALUES.MODULE.CSAT.ISSUEID_PARAM + issue}"> ${CONSTANT_VALUES.MODULE.CSAT.NO}</a>`;
+                              CONSTANT_VALUES.MODULE.CSAT.ISSUEID_PARAM + issue}" onclick='window.open(`${baseUrl}`, ‘_self’);'> ${CONSTANT_VALUES.MODULE.CSAT.NO}</a>`;
             const comment = CONSTANT_VALUES.MODULE.CSAT.MSG + '\n' + yesCsat + '\n' +
                 noCsat + '\n';
             let issueNumber = context.issue.number ?? context.payload.issue.number;
