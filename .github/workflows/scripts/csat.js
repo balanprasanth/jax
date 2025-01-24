@@ -42,11 +42,11 @@ module.exports = async ({ github, context }) => {
 
             const yesCsat = `<a href="${baseUrl + CONSTANT_VALUES.MODULE.CSAT.SATISFACTION_PARAM +
                 CONSTANT_VALUES.MODULE.CSAT.YES +
-                CONSTANT_VALUES.MODULE.CSAT.ISSUEID_PARAM + issue}"> ${CONSTANT_VALUES.MODULE.CSAT.YES}</a>`;
+                CONSTANT_VALUES.MODULE.CSAT.ISSUEID_PARAM + issue}" target="_blank"> ${CONSTANT_VALUES.MODULE.CSAT.YES}</a>`;
 
             const noCsat = `<a href="${baseUrl + CONSTANT_VALUES.MODULE.CSAT.SATISFACTION_PARAM +
                 CONSTANT_VALUES.MODULE.CSAT.NO +
-                CONSTANT_VALUES.MODULE.CSAT.ISSUEID_PARAM + issue}"> ${CONSTANT_VALUES.MODULE.CSAT.NO}</a>`;
+                CONSTANT_VALUES.MODULE.CSAT.ISSUEID_PARAM + issue}" target="_blank"> ${CONSTANT_VALUES.MODULE.CSAT.NO}</a>`;
             const comment = CONSTANT_VALUES.MODULE.CSAT.MSG + '\n' + yesCsat + '\n' +
                 noCsat + '\n';
             let issueNumber = context.issue.number ?? context.payload.issue.number;
