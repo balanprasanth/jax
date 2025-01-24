@@ -40,9 +40,7 @@ module.exports = async ({ github, context }) => {
             else
                 baseUrl = CONSTANT_VALUES.MODULE.CSAT.BASE_URL;
 
-            const yesCsat = `<a href="${baseUrl + CONSTANT_VALUES.MODULE.CSAT.SATISFACTION_PARAM +
-                CONSTANT_VALUES.MODULE.CSAT.YES +
-                CONSTANT_VALUES.MODULE.CSAT.ISSUEID_PARAM + issue}" target="_blank"> ${CONSTANT_VALUES.MODULE.CSAT.YES}</a>`;
+            const yesCsat = 'test'
 
             const noCsat = `<a href="${baseUrl + CONSTANT_VALUES.MODULE.CSAT.SATISFACTION_PARAM +
                 CONSTANT_VALUES.MODULE.CSAT.NO +
