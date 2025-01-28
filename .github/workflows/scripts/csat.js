@@ -40,13 +40,18 @@ module.exports = async ({ github, context }) => {
             else
                 baseUrl = CONSTANT_VALUES.MODULE.CSAT.BASE_URL;
 
-            const yesCsat = `<a target='_blank' href="${baseUrl + CONSTANT_VALUES.MODULE.CSAT.SATISFACTION_PARAM +
-                              CONSTANT_VALUES.MODULE.CSAT.YES +
-                              CONSTANT_VALUES.MODULE.CSAT.ISSUEID_PARAM + issue}">${CONSTANT_VALUES.MODULE.CSAT.YES}</a>`;
-   
-            const noCsat = `<a target='_blank' href="${baseUrl}"> ${CONSTANT_VALUES.MODULE.CSAT.NO}</a>`;
-            const params = new URLSearchParams({ param1: "value1", param2: "value2" });
-            const link = `${baseUrl}?${params.toString()}`;
+            cconst yesCsat = `<a href="${baseUrl + CONSTANT_VALUES.MODULE.CSAT.SATISFACTION_PARAM +
+                CONSTANT_VALUES.MODULE.CSAT.YES +
+                CONSTANT_VALUES.MODULE.CSAT.ISSUEID_PARAM + issue}"> ${CONSTANT_VALUES.MODULE.CSAT.YES}</a>`;
+
+            const noCsat = `<a href="${baseUrl + CONSTANT_VALUES.MODULE.CSAT.SATISFACTION_PARAM +
+                CONSTANT_VALUES.MODULE.CSAT.NO +
+                CONSTANT_VALUES.MODULE.CSAT.ISSUEID_PARAM + issue}"> ${CONSTANT_VALUES.MODULE.CSAT.NO}</a>`;
+             
+            const params_1 = new URLSearchParams({ CONSTANT_VALUES.MODULE.CSAT.SATISFACTION_PARAM: CONSTANT_VALUES.MODULE.CSAT.YES, CONSTANT_VALUES.MODULE.CSAT.ISSUEID_PARAM: issue });
+            const link_1 = `${baseUrl}?${params_1.toString()}`;
+            const params_2 = new URLSearchParams({ CONSTANT_VALUES.MODULE.CSAT.SATISFACTION_PARAM: CONSTANT_VALUES.MODULE.CSAT.NO, CONSTANT_VALUES.MODULE.CSAT.ISSUEID_PARAM: issue });
+            const link_2 = `${baseUrl}?${params_2.toString()}`; 
             const comment = CONSTANT_VALUES.MODULE.CSAT.MSG + '\n' + yesCsat + '\n' +
                 noCsat + '\n';
             let issueNumber = context.issue.number ?? context.payload.issue.number;
@@ -54,7 +59,7 @@ module.exports = async ({ github, context }) => {
                 issue_number: issueNumber,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: `${comment}\n\n[View Details](${link})`
+                body: `${comment}\n\n[yes link_1](${link})\n\n[no link_2](${link})`
             });
         }
     }
