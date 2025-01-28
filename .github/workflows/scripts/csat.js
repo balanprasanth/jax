@@ -55,14 +55,14 @@ module.exports = async ({ github, context }) => {
                    [CONSTANT_VALUES.MODULE.CSAT.ISSUEID_PARAM.toString()]: issue
             });
             const link_2 = `${baseUrl}?${params_2.toString()}`; 
-            const comment = CONSTANT_VALUES.MODULE.CSAT.MSG + '\n' + yesCsat + '\n' +
-                noCsat + '\n';
+            const comment = CONSTANT_VALUES.MODULE.CSAT.MSG + '\n' + [${CONSTANT_VALUES.MODULE.CSAT.YES.toString()}](${link_1}) + '\n' +
+                [${CONSTANT_VALUES.MODULE.CSAT.NO.toString()}](${link_2} + '\n';
             let issueNumber = context.issue.number ?? context.payload.issue.number;
             await github.rest.issues.createComment({
                 issue_number: issueNumber,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: `${comment}\n\n[${CONSTANT_VALUES.MODULE.CSAT.YES.toString()}](${link_1})\n\n[${CONSTANT_VALUES.MODULE.CSAT.NO.toString()}](${link_2})`
+                body: comment
             });
         }
     }
