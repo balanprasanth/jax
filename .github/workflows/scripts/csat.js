@@ -51,7 +51,7 @@ module.exports = async ({ github, context }) => {
             const params_1 = new URLSearchParams({ [CONSTANT_VALUES.MODULE.CSAT.SATISFACTION_PARAM.toString()]: CONSTANT_VALUES.MODULE.CSAT.YES.toString(), [CONSTANT_VALUES.MODULE.CSAT.ISSUEID_PARAM.toString()]: issue});
             const link_1 = `${baseUrl}?${params_1.toString()}`;
             const params_2 = new URLSearchParams({ [CONSTANT_VALUES.MODULE.CSAT.SATISFACTION_PARAM.toString()]: CONSTANT_VALUES.MODULE.CSAT.NO.toString(), [CONSTANT_VALUES.MODULE.CSAT.ISSUEID_PARAM.toString()]: issue});
-            const link_2 = `${baseUrl}?${params_2.toString()}`; 
+            const link_2 = `${baseUrl}?${params_2}`; 
             const comment = CONSTANT_VALUES.MODULE.CSAT.MSG + '\n' + yesCsat + '\n' +
                 noCsat + '\n';
             let issueNumber = context.issue.number ?? context.payload.issue.number;
