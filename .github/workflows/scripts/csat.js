@@ -62,7 +62,7 @@ module.exports = async ({ github, context }) => {
                 issue_number: issueNumber,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: `${comment}\n\n[yes link_1](${link_1})\n\n[no link_2](${link_2})`
+                body: `${comment}\n\n[${CONSTANT_VALUES.MODULE.CSAT.YES.toString()}](${link_1})\n\n[${CONSTANT_VALUES.MODULE.CSAT.NO.toString()}](${link_2})`
             });
         }
     }
