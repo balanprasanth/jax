@@ -48,9 +48,9 @@ module.exports = async ({ github, context }) => {
                 CONSTANT_VALUES.MODULE.CSAT.NO +
                 CONSTANT_VALUES.MODULE.CSAT.ISSUEID_PARAM + issue}"> ${CONSTANT_VALUES.MODULE.CSAT.NO}</a>`;
              
-            const params_1 = new URLSearchParams({ ${CONSTANT_VALUES.MODULE.CSAT.SATISFACTION_PARAM}: ${CONSTANT_VALUES.MODULE.CSAT.YES}, ${CONSTANT_VALUES.MODULE.CSAT.ISSUEID_PARAM}: issue });
+            const params_1 = new URLSearchParams({ entry.85265664: CONSTANT_VALUES.MODULE.CSAT.YES, entry.2137816233: issue });
             const link_1 = `${baseUrl}?${params_1.toString()}`;
-            const params_2 = new URLSearchParams({ ${CONSTANT_VALUES.MODULE.CSAT.SATISFACTION_PARAM}: ${CONSTANT_VALUES.MODULE.CSAT.NO}, ${CONSTANT_VALUES.MODULE.CSAT.ISSUEID_PARAM}: issue });
+            const params_2 = new URLSearchParams({ entry.85265664: CONSTANT_VALUES.MODULE.CSAT.NO, entry.2137816233: issue });
             const link_2 = `${baseUrl}?${params_2.toString()}`; 
             const comment = CONSTANT_VALUES.MODULE.CSAT.MSG + '\n' + yesCsat + '\n' +
                 noCsat + '\n';
