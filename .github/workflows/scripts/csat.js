@@ -45,6 +45,8 @@ module.exports = async ({ github, context }) => {
                               CONSTANT_VALUES.MODULE.CSAT.ISSUEID_PARAM + issue}">${CONSTANT_VALUES.MODULE.CSAT.YES}</a>`;
    
             const noCsat = `<a target='_blank' href="${baseUrl}"> ${CONSTANT_VALUES.MODULE.CSAT.NO}</a>`;
+            const params = new URLSearchParams({ param1: "value1", param2: "value2" });
+            const link = `${baseUrl}?${params.toString()}`;
             const comment = CONSTANT_VALUES.MODULE.CSAT.MSG + '\n' + yesCsat + '\n' +
                 noCsat + '\n';
             let issueNumber = context.issue.number ?? context.payload.issue.number;
@@ -52,7 +54,7 @@ module.exports = async ({ github, context }) => {
                 issue_number: issueNumber,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: comment
+                body: `${comment}\n\n[View Details](${link})`
             });
         }
     }
