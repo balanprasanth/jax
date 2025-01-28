@@ -59,7 +59,7 @@ module.exports = async ({ github, context }) => {
                 issue_number: issueNumber,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: `${comment}\n\n[yes link_1](${link})\n\n[no link_2](${link})`
+                body: `${comment}\n\n[yes link_1](${link_1})\n\n[no link_2](${link_2})`
             });
         }
     }
